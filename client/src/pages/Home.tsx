@@ -85,7 +85,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-foreground">
-                  Powered by GoHighLevel AI
+                  AI-Powered Customer Service
                 </span>
               </div>
 
@@ -292,7 +292,7 @@ export default function Home() {
               Ready to Deploy Connor?
             </h2>
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
-              Get started with GoHighLevel AI Agents today and transform your
+              Get started with CounterPro.ai today and transform your
               wholesale distribution customer service.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -300,7 +300,7 @@ export default function Home() {
                 size="lg"
                 className="bg-primary hover:bg-primary/80 text-primary-foreground glow-blue text-lg px-8 py-6"
               >
-                Get Started with GHL
+                Get Started Free
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               <Button
@@ -320,7 +320,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center text-muted-foreground">
             <p className="text-sm">
-              CounterPro.ai - Powered by GoHighLevel AI • Demo for illustration purposes
+              CounterPro.ai - Enterprise AI Customer Service • Demo for illustration purposes
             </p>
             <p className="text-xs mt-2 opacity-70">
               © 2026 CounterPro.ai. All conversations are simulated for demonstration.
