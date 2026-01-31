@@ -1,5 +1,5 @@
 /*
- * SMSDemo - Simulated SMS conversation interface with Frank AI
+ * SMSDemo - Simulated SMS conversation interface with Connor AI
  * Glassmorphism design with cyan accents for messaging
  */
 
@@ -10,7 +10,7 @@ import { MessageSquare, Send } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 interface Message {
-  sender: "frank" | "customer";
+  sender: "connor" | "customer";
   text: string;
   timestamp: Date;
 }
@@ -20,35 +20,35 @@ const DEMO_SCENARIOS = [
     title: "Quick Inventory Check",
     trigger: "Do you have pallet jacks in stock?",
     responses: [
-      { sender: "frank" as const, text: "Hi! Yes, we have pallet jacks in stock. We carry both manual and electric models. What type are you looking for and how many do you need?" },
+      { sender: "connor" as const, text: "Hi! Yes, we have pallet jacks in stock. We carry both manual and electric models. What type are you looking for and how many do you need?" },
       { sender: "customer" as const, text: "Manual, need 2" },
-      { sender: "frank" as const, text: "Perfect! I have 2 manual pallet jacks (5,500 lb capacity) available. They're $385 each. Would you like me to place the order? I can ship them out today." },
+      { sender: "connor" as const, text: "Perfect! I have 2 manual pallet jacks (5,500 lb capacity) available. They're $385 each. Would you like me to place the order? I can ship them out today." },
       { sender: "customer" as const, text: "Yes please. Same address as last time" },
-      { sender: "frank" as const, text: "✅ Order Confirmed!\n\nOrder #: WD-84721\nItems: 2 manual pallet jacks\nTotal: $855 (includes shipping)\nShip to: 123 Main St, Dallas\n\nYou'll get tracking info within 2 hours. Need anything else?" },
+      { sender: "connor" as const, text: "✅ Order Confirmed!\n\nOrder #: WD-84721\nItems: 2 manual pallet jacks\nTotal: $855 (includes shipping)\nShip to: 123 Main St, Dallas\n\nYou'll get tracking info within 2 hours. Need anything else?" },
       { sender: "customer" as const, text: "Nope thanks!" },
-      { sender: "frank" as const, text: "Anytime! 👍" },
+      { sender: "connor" as const, text: "Anytime! 👍" },
     ],
   },
   {
     title: "Order Status Inquiry",
     trigger: "What's the status of order WD-73924?",
     responses: [
-      { sender: "frank" as const, text: "Let me check that for you right away..." },
-      { sender: "frank" as const, text: "Order WD-73924 shipped yesterday! 📦\n\nTracking: 1Z999AA10123456784\nCarrier: UPS Ground\nExpected delivery: Thursday by 8pm\n\nYou can track it here: ups.com/track" },
+      { sender: "connor" as const, text: "Let me check that for you right away..." },
+      { sender: "connor" as const, text: "Order WD-73924 shipped yesterday! 📦\n\nTracking: 1Z999AA10123456784\nCarrier: UPS Ground\nExpected delivery: Thursday by 8pm\n\nYou can track it here: ups.com/track" },
       { sender: "customer" as const, text: "Perfect, thanks!" },
-      { sender: "frank" as const, text: "You're welcome! Let me know if you need anything else." },
+      { sender: "connor" as const, text: "You're welcome! Let me know if you need anything else." },
     ],
   },
   {
     title: "Pricing Question",
     trigger: "What's your best price on industrial cleaning solution? Need 50 drums",
     responses: [
-      { sender: "frank" as const, text: "Great question! For 50 drums (5-gallon), I can offer you our volume discount:" },
-      { sender: "frank" as const, text: "Regular price: $42/drum\nVolume discount (50+): $38/drum\nTotal: $1,900 + shipping\n\nAll 50 are in stock at our Memphis warehouse. Want me to prepare a quote?" },
+      { sender: "connor" as const, text: "Great question! For 50 drums (5-gallon), I can offer you our volume discount:" },
+      { sender: "connor" as const, text: "Regular price: $42/drum\nVolume discount (50+): $38/drum\nTotal: $1,900 + shipping\n\nAll 50 are in stock at our Memphis warehouse. Want me to prepare a quote?" },
       { sender: "customer" as const, text: "Yes, and what's shipping to Chicago?" },
-      { sender: "frank" as const, text: "Shipping to Chicago for 50 drums:\n\n• Standard (5-7 days): $185\n• Expedited (2-3 days): $340\n\nTotal with standard: $2,085\n\nShall I send you a formal quote via email?" },
+      { sender: "connor" as const, text: "Shipping to Chicago for 50 drums:\n\n• Standard (5-7 days): $185\n• Expedited (2-3 days): $340\n\nTotal with standard: $2,085\n\nShall I send you a formal quote via email?" },
       { sender: "customer" as const, text: "Yes please, send to mike@abcrestaurant.com" },
-      { sender: "frank" as const, text: "✅ Quote sent to mike@abcrestaurant.com!\n\nQuote #: Q-2024-1547\nValid for: 14 days\n\nReply here or call us to place the order. Thanks Mike!" },
+      { sender: "connor" as const, text: "✅ Quote sent to mike@abcrestaurant.com!\n\nQuote #: Q-2024-1547\nValid for: 14 days\n\nReply here or call us to place the order. Thanks Mike!" },
     ],
   },
 ];
@@ -75,7 +75,7 @@ export default function SMSDemo() {
     }
 
     const nextMessage = DEMO_SCENARIOS[selectedScenario].responses[autoPlayIndex];
-    const delay = nextMessage.sender === "frank" ? 1500 : 1000;
+    const delay = nextMessage.sender === "connor" ? 1500 : 1000;
 
     setIsTyping(true);
     const typingTimer = setTimeout(() => {
@@ -118,14 +118,14 @@ export default function SMSDemo() {
     ]);
     setCurrentInput("");
 
-    // Simulate Frank's response
+    // Simulate Connor's response
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
       setMessages((prev) => [
         ...prev,
         {
-          sender: "frank",
+          sender: "connor",
           text: "I'm a demo AI, but in the real system I'd respond intelligently to your message! Try one of the preset scenarios to see full conversations.",
           timestamp: new Date(),
         },
@@ -174,7 +174,7 @@ export default function SMSDemo() {
                 <MessageSquare className="w-5 h-5 text-secondary" />
               </div>
               <div>
-                <h4 className="text-base font-semibold text-foreground">Frank AI</h4>
+                <h4 className="text-base font-semibold text-foreground">Connor AI</h4>
                 <p className="text-xs text-muted-foreground">Wholesale Distribution</p>
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function SMSDemo() {
               >
                 <div
                   className={`max-w-[75%] rounded-2xl px-4 py-2 ${
-                    message.sender === "frank"
+                    message.sender === "connor"
                       ? "glass text-foreground rounded-tl-sm"
                       : "bg-secondary/20 text-foreground border border-secondary/30 rounded-tr-sm"
                   }`}

@@ -1,5 +1,5 @@
 /*
- * PhoneDemo - Simulated phone call interface with Frank AI
+ * PhoneDemo - Simulated phone call interface with Connor AI
  * Glassmorphism design with electric blue accents
  */
 
@@ -9,7 +9,7 @@ import { Phone, PhoneOff, Volume2 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface Message {
-  speaker: "frank" | "customer";
+  speaker: "connor" | "customer";
   text: string;
   timestamp: Date;
 }
@@ -18,37 +18,37 @@ const DEMO_CONVERSATIONS = [
   {
     title: "Successful Order - All In Stock",
     messages: [
-      { speaker: "frank" as const, text: "Thank you for calling! This is Frank. How can I help you today?" },
-      { speaker: "customer" as const, text: "Hi Frank, I need to place an order for 10 cases of paper towels and 5 boxes of trash bags." },
-      { speaker: "frank" as const, text: "Perfect! Let me check that for you... Good news - I have both items in stock and ready to ship today. Can I confirm your delivery address?" },
+      { speaker: "connor" as const, text: "Thank you for calling! This is Connor. How can I help you today?" },
+      { speaker: "customer" as const, text: "Hi Connor, I need to place an order for 10 cases of paper towels and 5 boxes of trash bags." },
+      { speaker: "connor" as const, text: "Perfect! Let me check that for you... Good news - I have both items in stock and ready to ship today. Can I confirm your delivery address?" },
       { speaker: "customer" as const, text: "Yes, 123 Main Street, Dallas, Texas." },
-      { speaker: "frank" as const, text: "Excellent. Your total comes to $487.50 including shipping. I can have this shipped out today for delivery by Thursday. Would you like me to text you an order confirmation?" },
+      { speaker: "connor" as const, text: "Excellent. Your total comes to $487.50 including shipping. I can have this shipped out today for delivery by Thursday. Would you like me to text you an order confirmation?" },
       { speaker: "customer" as const, text: "Yes, please!" },
-      { speaker: "frank" as const, text: "Perfect! Your order number is WD-73924. I'm sending the confirmation to your phone now. Is there anything else I can help you with today?" },
+      { speaker: "connor" as const, text: "Perfect! Your order number is WD-73924. I'm sending the confirmation to your phone now. Is there anything else I can help you with today?" },
     ],
   },
   {
     title: "Limited Availability - Memphis Warehouse",
     messages: [
-      { speaker: "frank" as const, text: "Thank you for calling! This is Frank. How can I help you today?" },
+      { speaker: "connor" as const, text: "Thank you for calling! This is Connor. How can I help you today?" },
       { speaker: "customer" as const, text: "Do you have Industrial Cleaning Solution in stock? I need 20 drums." },
-      { speaker: "frank" as const, text: "Let me check that for you right away... I see that the 5-gallon drums are currently out of stock at our main warehouse, but I do have them available at our Memphis facility. I can ship those out within 24 hours." },
-      { speaker: "frank" as const, text: "Would you prefer expedited shipping for $45 to get them faster, or standard 3-day shipping at our regular rate of $85?" },
+      { speaker: "connor" as const, text: "Let me check that for you right away... I see that the 5-gallon drums are currently out of stock at our main warehouse, but I do have them available at our Memphis facility. I can ship those out within 24 hours." },
+      { speaker: "connor" as const, text: "Would you prefer expedited shipping for $45 to get them faster, or standard 3-day shipping at our regular rate of $85?" },
       { speaker: "customer" as const, text: "Let's do standard shipping." },
-      { speaker: "frank" as const, text: "Perfect choice! I'll get that order processed from Memphis right away. Your order number is WD-84512, and you'll receive them by Friday. Sending confirmation now!" },
+      { speaker: "connor" as const, text: "Perfect choice! I'll get that order processed from Memphis right away. Your order number is WD-84512, and you'll receive them by Friday. Sending confirmation now!" },
     ],
   },
   {
     title: "Out of Stock - Offering Solutions",
     messages: [
-      { speaker: "frank" as const, text: "Thank you for calling! This is Frank. How can I help you today?" },
+      { speaker: "connor" as const, text: "Thank you for calling! This is Connor. How can I help you today?" },
       { speaker: "customer" as const, text: "I need 50 Heavy-Duty Floor Mats." },
-      { speaker: "frank" as const, text: "Let me check availability... I'm showing that our Heavy-Duty Floor Mats are temporarily out of stock, but here's the good news - we have a shipment arriving in 2 days." },
-      { speaker: "frank" as const, text: "I can place your order on backorder with a guaranteed ship date, or I can offer you our Premium Floor Mat model which is in stock and actually has better durability ratings. Which would you prefer?" },
+      { speaker: "connor" as const, text: "Let me check availability... I'm showing that our Heavy-Duty Floor Mats are temporarily out of stock, but here's the good news - we have a shipment arriving in 2 days." },
+      { speaker: "connor" as const, text: "I can place your order on backorder with a guaranteed ship date, or I can offer you our Premium Floor Mat model which is in stock and actually has better durability ratings. Which would you prefer?" },
       { speaker: "customer" as const, text: "What's the price difference?" },
-      { speaker: "frank" as const, text: "The Premium model is about $3 more per mat with a 5-year warranty instead of 3-year. For 50 mats, that's a $150 difference but much better long-term value." },
+      { speaker: "connor" as const, text: "The Premium model is about $3 more per mat with a 5-year warranty instead of 3-year. For 50 mats, that's a $150 difference but much better long-term value." },
       { speaker: "customer" as const, text: "Hmm, let me think about it. Can I get a callback?" },
-      { speaker: "frank" as const, text: "Absolutely! I can have one of our product specialists give you a call to go over the detailed comparison. Let me transfer you to Sarah in our product team right now..." },
+      { speaker: "connor" as const, text: "Absolutely! I can have one of our product specialists give you a call to go over the detailed comparison. Let me transfer you to Sarah in our product team right now..." },
     ],
   },
 ];
@@ -134,7 +134,7 @@ export default function PhoneDemo() {
                 <Phone className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-foreground">Frank AI</h4>
+                <h4 className="text-lg font-semibold text-foreground">Connor AI</h4>
                 <p className="text-sm text-muted-foreground flex items-center gap-2">
                   <Volume2 className="w-4 h-4 animate-pulse" />
                   Call in progress
@@ -160,13 +160,13 @@ export default function PhoneDemo() {
               >
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-                    message.speaker === "frank"
+                    message.speaker === "connor"
                       ? "glass-strong text-foreground"
                       : "bg-primary/20 text-foreground border border-primary/30"
                   }`}
                 >
                   <p className="text-sm font-medium mb-1 opacity-70">
-                    {message.speaker === "frank" ? "Frank" : "You"}
+                    {message.speaker === "connor" ? "Connor" : "You"}
                   </p>
                   <p className="text-base leading-relaxed">{message.text}</p>
                 </div>

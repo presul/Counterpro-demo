@@ -91,7 +91,7 @@ export default function Home() {
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 Meet{" "}
-                <span className="gradient-text">Frank</span>
+                <span className="gradient-text">Connor</span>
               </h1>
 
               <p className="text-xl lg:text-2xl text-foreground/80 leading-relaxed">
@@ -168,7 +168,7 @@ export default function Home() {
               Intelligent Capabilities
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Frank combines advanced AI with deep wholesale distribution knowledge
+              Connor combines advanced AI with deep wholesale distribution knowledge
               to deliver exceptional customer experiences across every channel.
             </p>
           </div>
@@ -210,10 +210,10 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Experience Frank in Action
+              Experience Connor in Action
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Try interactive demos to see how Frank handles real wholesale
+              Try interactive demos to see how Connor handles real wholesale
               distribution scenarios with intelligence and professionalism.
             </p>
           </div>
@@ -256,7 +256,7 @@ export default function Home() {
                 Transform Your Customer Service
               </h2>
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-                Frank doesn't just answer calls - he understands your business,
+                Connor doesn't just answer calls - he understands your business,
                 solves problems, and delivers experiences that keep customers
                 coming back.
               </p>
@@ -289,7 +289,7 @@ export default function Home() {
         <div className="container">
           <Card className="glass-strong p-12 lg:p-16 text-center glow-blue">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Ready to Deploy Frank?
+              Ready to Deploy Connor?
             </h2>
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
               Get started with GoHighLevel AI Agents today and transform your
@@ -320,10 +320,10 @@ export default function Home() {
         <div className="container">
           <div className="text-center text-muted-foreground">
             <p className="text-sm">
-              Built with GoHighLevel AI Agents • Demo for illustration purposes
+              CounterPro.ai - Powered by GoHighLevel AI • Demo for illustration purposes
             </p>
             <p className="text-xs mt-2 opacity-70">
-              © 2026 Frank AI Demo. All conversations are simulated for demonstration.
+              © 2026 CounterPro.ai. All conversations are simulated for demonstration.
             </p>
           </div>
         </div>
