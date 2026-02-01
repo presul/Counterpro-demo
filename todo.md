@@ -1,22 +1,22 @@
-# TODO: Full-Stack Upgrade for Waitlist Form
+# TODO: Revenue Scale Field and Integration Prep
 
-## Phase 1: Upgrade to Full-Stack
-- [x] Run webdev_add_feature to upgrade to web-db-user
-- [x] Verify backend server and database are running
+## Phase 1: Form Updates
+- [x] Add revenue scale dropdown to WaitlistForm component
+- [x] Add revenue options: Under $5M, $5-$20M, $20-$200M, Over $200M
+- [x] Update form validation
 
-## Phase 2: Backend Implementation
-- [x] Create database schema for waitlist submissions
-- [x] Implement POST /api/waitlist endpoint
-- [x] Add email sending functionality (using built-in email service)
-- [x] Add database storage for submissions
+## Phase 2: Backend Updates
+- [x] Add revenue field to database schema
+- [x] Update waitlist router to accept revenue field
+- [x] Update email template to include revenue
+- [x] Run database migration
 
-## Phase 3: Frontend Updates
-- [x] Update WaitlistForm to call backend API instead of mailto
-- [x] Add proper error handling and success messages
-- [x] Test complete submission flow
+## Phase 3: Testing
+- [x] Test form submission with revenue field
+- [x] Verify database storage
+- [x] Create checkpoint
 
-## Phase 4: Final Testing
-- [x] Test form submission end-to-end
-- [x] Verify email delivery to jm@digitalvisor.com (email API endpoint configured)
-- [x] Verify database storage (submission saved successfully)
-- [ ] Create final checkpoint
+## Future Integrations (Notes)
+- GoHighLevel integration for rapid AI response
+- ElevenLabs demo link for live demo button
+- Goal: AI-driven sales process without human intervention

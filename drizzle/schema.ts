@@ -36,6 +36,7 @@ export const waitlistSubmissions = mysqlTable("waitlist_submissions", {
   website: varchar("website", { length: 512 }),
   email: varchar("email", { length: 320 }).notNull(),
   phone: varchar("phone", { length: 50 }).notNull(),
+  annualRevenue: varchar("annual_revenue", { length: 50 }),
   smsConsent: boolean("sms_consent").default(false).notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });

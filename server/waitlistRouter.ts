@@ -11,6 +11,7 @@ const waitlistSubmissionSchema = z.object({
   website: z.string().url().optional().or(z.literal("")),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(1, "Phone is required"),
+  annualRevenue: z.string().optional(),
   smsConsent: z.boolean().default(false),
 });
 
@@ -31,10 +32,20 @@ export const waitlistRouter = router({
           website: input.website || null,
           email: input.email,
           phone: input.phone,
+          annualRevenue: input.annualRevenue || null,
           smsConsent: input.smsConsent,
         });
 
         // Send email notification using Manus built-in email service
+        // Revenue display mapping
+        const revenueMap: Record<string, string> = {
+          under_5m: "Under $5 Million",
+          "5m_20m": "$5 - $20 Million",
+          "20m_200m": "$20 - $200 Million",
+          over_200m: "Over $200 Million",
+        };
+        const revenueDisplay = input.annualRevenue ? revenueMap[input.annualRevenue] || input.annualRevenue : "Not provided";
+
         const emailBody = `
 New Waitlist Submission - CounterPro.ai
 
@@ -43,6 +54,7 @@ Company Name: ${input.companyName || "Not provided"}
 Website: ${input.website || "Not provided"}
 Email: ${input.email}
 Phone: ${input.phone}
+Annual Revenue: ${revenueDisplay}
 SMS Consent: ${input.smsConsent ? "Yes" : "No"}
 
 Submitted: ${new Date().toLocaleString()}

@@ -10,6 +10,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -26,6 +33,7 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
     website: "",
     email: "",
     phone: "",
+    annualRevenue: "",
     smsConsent: false,
   });
 
@@ -42,6 +50,7 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
         website: "",
         email: "",
         phone: "",
+        annualRevenue: "",
         smsConsent: false,
       });
       
@@ -61,7 +70,7 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.name || !formData.email || !formData.phone) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.annualRevenue) {
       toast.error("Please fill in all required fields");
       return;
     }
@@ -152,6 +161,28 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
               }
               required
             />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="annualRevenue">
+              Annual Revenue <span className="text-destructive">*</span>
+            </Label>
+            <Select
+              value={formData.annualRevenue}
+              onValueChange={(value) =>
+                setFormData({ ...formData, annualRevenue: value })
+              }
+            >
+              <SelectTrigger id="annualRevenue">
+                <SelectValue placeholder="Select revenue range" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="under_5m">Under $5 Million</SelectItem>
+                <SelectItem value="5m_20m">$5 - $20 Million</SelectItem>
+                <SelectItem value="20m_200m">$20 - $200 Million</SelectItem>
+                <SelectItem value="over_200m">Over $200 Million</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="flex items-start space-x-2 pt-2">

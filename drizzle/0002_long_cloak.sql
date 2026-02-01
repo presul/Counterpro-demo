@@ -1,0 +1,1 @@
+ALTER TABLE `waitlist_submissions` ADD `annual_revenue` varchar(50);
