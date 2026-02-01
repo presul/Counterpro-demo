@@ -133,8 +133,8 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
             <Label htmlFor="website">Website</Label>
             <Input
               id="website"
-              type="url"
-              placeholder="https://example.com"
+              type="text"
+              placeholder="example.com"
               value={formData.website}
               onChange={(e) =>
                 setFormData({ ...formData, website: e.target.value })

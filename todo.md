@@ -76,11 +76,34 @@
 # TODO: Push Updates to GitHub
 
 ## Phase 1: Git Operations
-- [ ] Check git status
-- [ ] Add all changes
-- [ ] Commit with message
-- [ ] Push to GitHub
+- [x] Check git status
+- [x] Add all changes
+- [x] Commit with message
+- [x] Push to GitHub (successfully pushed to presul/Counterpro-demo)
 
 ## Phase 2: Verification
-- [ ] Verify push succeeded
-- [ ] Confirm with user
+- [x] Verify push succeeded (199 objects pushed successfully)
+- [x] Confirm with user
+
+# TODO: Fix Vercel Deployment Configuration
+
+## Phase 1: Create Configuration
+- [x] Create vercel.json with proper Node.js settings (serverless function)
+- [x] Update build configuration
+
+## Phase 2: Deploy
+- [ ] Push to GitHub
+- [ ] Verify Vercel deployment succeeds
+
+# TODO: Fix Website Field Validation
+
+## Phase 1: Update Validation
+- [x] Change website field to accept URLs without https:// (changed type from 'url' to 'text')
+- [x] Accept URLs without www (no longer enforces URL format)
+- [x] Accept plain domain names (example.com) (updated placeholder)
+
+## Phase 2: Testing
+- [ ] Test https://www.example.com
+- [ ] Test www.example.com
+- [ ] Test example.com
+- [ ] Create checkpoint
