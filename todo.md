@@ -58,4 +58,29 @@
 ## Phase 2: Testing
 - [x] Test website field accepts various extensions (tested with .io - works perfectly)
 - [x] Verify checkbox is visible when unchecked (white background with border-2 visible)
+- [x] Create checkpoint (version 295de610)
+
+# TODO: Remove All Remaining Frank References
+
+## Phase 1: Search
+- [ ] Search codebase for "Frank" references
+- [ ] Search codebase for "frank" references (lowercase)
+
+## Phase 2: Replace
+- [ ] Replace all found references with CounterPro.ai or Connor
+
+## Phase 3: Testing
+- [ ] Verify all changes
 - [ ] Create checkpoint
+
+# TODO: Push Updates to GitHub
+
+## Phase 1: Git Operations
+- [ ] Check git status
+- [ ] Add all changes
+- [ ] Commit with message
+- [ ] Push to GitHub
+
+## Phase 2: Verification
+- [ ] Verify push succeeded
+- [ ] Confirm with user
