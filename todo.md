@@ -36,4 +36,26 @@
 
 ## Phase 2: Testing
 - [x] Verify text change in browser (confirmed: "For Wholesalers & Distributors")
+- [x] Create checkpoint (version aa8acb13)
+
+# TODO: Fix Revenue Cards Grid Layout
+
+## Phase 1: Restore Grid Layout
+- [ ] Change revenue cards from full-width stacked to 3-column grid (md:grid-cols-2 lg:grid-cols-3)
+- [ ] Ensure responsive: 1 column mobile, 2 columns tablet, 3 columns desktop
+
+## Phase 2: Testing
+- [ ] Test layout on desktop view
+- [ ] Verify mobile responsiveness
+- [ ] Create checkpoint
+
+# TODO: Fix Waitlist Form Validation and Checkbox Visibility
+
+## Phase 1: Update Form
+- [x] Change website validation to accept any domain extension (already accepts all - uses type="url")
+- [x] Add white border/background to unchecked SMS consent checkbox for visibility (added bg-white and border-2)
+
+## Phase 2: Testing
+- [x] Test website field accepts various extensions (tested with .io - works perfectly)
+- [x] Verify checkbox is visible when unchecked (white background with border-2 visible)
 - [ ] Create checkpoint
