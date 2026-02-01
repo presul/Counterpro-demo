@@ -99,13 +99,16 @@ export default function Home() {
             {/* Left Column - Text Content */}
             <div className="space-y-8">
               {/* Logo */}
-              <div className="mb-6 inline-block">
-                <div className="glass-strong rounded-2xl p-4 glow-blue">
+              <div className="mb-6 inline-flex items-center gap-4">
+                <div className="glass-strong rounded-xl p-3 glow-blue backdrop-blur-xl bg-background/30 border border-primary/30">
                   <img
                     src="/images/counterpro-logo-transparent.png"
                     alt="CounterPro.ai Logo"
-                    className="h-24 w-auto"
+                    className="h-20 w-auto"
                   />
+                </div>
+                <div className="text-4xl font-bold tracking-tight" style={{ fontFamily: '"Orbitron", "Rajdhani", sans-serif' }}>
+                  <span className="gradient-text">CounterPro.ai</span>
                 </div>
               </div>
 
@@ -151,7 +154,7 @@ export default function Home() {
                   <div className="text-sm text-muted-foreground mt-1">Response Time</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold gradient-text">100%</div>
+                  <div className="text-3xl font-bold gradient-text">99.97%</div>
                   <div className="text-sm text-muted-foreground mt-1">Accuracy</div>
                 </div>
               </div>
@@ -333,8 +336,7 @@ export default function Home() {
               </h3>
               <div className="text-6xl font-bold mb-4 text-foreground">487%</div>
               <p className="text-xl text-foreground/80">
-                Typical wholesale distributors see <span className="font-bold text-primary">$147,000</span> in
-                additional annual revenue from implementing CounterPro
+                Typical wholesale distributors see significant revenue growth from implementing CounterPro
               </p>
             </Card>
           </div>
