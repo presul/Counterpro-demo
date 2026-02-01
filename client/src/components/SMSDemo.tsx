@@ -59,7 +59,9 @@ export default function SMSDemo() {
   const [currentInput, setCurrentInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [autoPlayIndex, setAutoPlayIndex] = useState(0);
+  const [customMessageCount, setCustomMessageCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -107,14 +109,16 @@ export default function SMSDemo() {
     setMessages([]);
     setCurrentInput("");
     setAutoPlayIndex(0);
+    setCustomMessageCount(0);
   };
 
   const sendCustomMessage = () => {
     if (!currentInput.trim()) return;
 
+    const userMessage = currentInput;
     setMessages((prev) => [
       ...prev,
-      { sender: "customer", text: currentInput, timestamp: new Date() },
+      { sender: "customer", text: userMessage, timestamp: new Date() },
     ]);
     setCurrentInput("");
 
@@ -122,14 +126,25 @@ export default function SMSDemo() {
     setIsTyping(true);
     setTimeout(() => {
       setIsTyping(false);
+      
+      let responseText;
+      if (customMessageCount === 0) {
+        // First custom message - provide a helpful response
+        responseText = "Thanks for your message! In the live system, I can check inventory, take orders, provide quotes, and answer questions about products and shipments. For a full demo experience, please schedule a call with our team!";
+      } else {
+        // Second and subsequent messages - suggest scheduling
+        responseText = "I'd love to help you further! To see the full capabilities and discuss your specific needs, let's schedule a quick call. Would you like me to send you a scheduling link?";
+      }
+      
       setMessages((prev) => [
         ...prev,
         {
           sender: "connor",
-          text: "I'm a demo AI, but in the real system I'd respond intelligently to your message! Try one of the preset scenarios to see full conversations.",
+          text: responseText,
           timestamp: new Date(),
         },
       ]);
+      setCustomMessageCount(prev => prev + 1);
     }, 1500);
   };
 
@@ -166,6 +181,7 @@ export default function SMSDemo() {
           ))}
         </div>
       ) : (
+        <div ref={containerRef}>
         <Card className="glass-strong flex flex-col h-[600px]">
           {/* SMS Header */}
           <div className="flex items-center justify-between p-4 border-b border-border">
@@ -238,6 +254,7 @@ export default function SMSDemo() {
             </div>
           </div>
         </Card>
+        </div>
       )}
     </div>
   );

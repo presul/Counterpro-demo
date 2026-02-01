@@ -1,7 +1,7 @@
-/*
- * Home Page - Frank AI Demo
+/**
+ * Home Page - CounterPro.ai Demo
  * Tech-Forward Glassmorphism with AI Command Center
- * Features: Hero with gradient mesh, phone/SMS demo interfaces, capabilities showcase
+ * Features: Hero with animated electrons, phone/SMS demo interfaces, capabilities showcase
  */
 
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,7 @@ import {
   CheckCircle2,
   ArrowRight,
   Sparkles,
+  Bot,
 } from "lucide-react";
 
 export default function Home() {
@@ -55,46 +56,65 @@ export default function Home() {
     },
   ];
 
-  const benefits = [
-    "Handles routine orders automatically, freeing staff for complex issues",
-    "Reduces response time from hours to seconds",
-    "Maintains consistent brand voice across all interactions",
-    "Scales infinitely without adding headcount",
-    "Captures every lead and order opportunity",
-    "Provides detailed conversation analytics",
-  ];
+  const handleChatClick = () => {
+    alert("AI Chat: CounterPro.ai handles phone calls, SMS messages, takes orders, checks inventory in real-time, and intelligently transfers complex issues to your team. Available 24/7 to capture every revenue opportunity!");
+  };
+
+  const handleLearnMore = () => {
+    window.open("https://calendly.com/joemeyer/counterpro-ai-intro-demo", "_blank");
+  };
 
   return (
     <div className="min-h-screen animated-gradient">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: "url(/images/hero-gradient-mesh.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        {/* Hero Background with Electron Animation */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-60"
+            style={{
+              backgroundImage: "url(/images/hero-digital-counter.png)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          {/* Electron particles overlay */}
+          <div className="electron-container">
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="electron"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                  animationDuration: `${3 + Math.random() * 4}s`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
 
         <div className="container relative z-10 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full">
-                <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-foreground">
-                  AI-Powered Customer Service
-                </span>
+              {/* Logo */}
+              <div className="mb-6 inline-block">
+                <div className="glass-strong rounded-2xl p-4 glow-blue">
+                  <img
+                    src="/images/counterpro-logo-transparent.png"
+                    alt="CounterPro.ai Logo"
+                    className="h-24 w-auto"
+                  />
+                </div>
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                Meet{" "}
-                <span className="gradient-text">Connor</span>
+                Your AI powered{" "}
+                <span className="gradient-text">Client Success Agent</span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-foreground/80 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-foreground/90 leading-relaxed">
                 Your AI-powered customer service agent for wholesale distribution.
                 Handles calls, takes orders, checks inventory, and solves problems
                 with human-like intelligence.
@@ -115,9 +135,7 @@ export default function Home() {
                   size="lg"
                   variant="outline"
                   className="glass-strong text-lg px-8 py-6"
-                  onClick={() => {
-                    document.getElementById("capabilities")?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={handleLearnMore}
                 >
                   Learn More
                 </Button>
@@ -139,22 +157,24 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column - Visual */}
+            {/* Right Column - Visual with Floating Icons */}
             <div className="relative">
-              <div className="glass-strong rounded-3xl p-8 glow-blue">
-                <img
-                  src="/images/ai-agent-visualization.png"
-                  alt="AI Agent Visualization"
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
-              {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 glass rounded-2xl p-4 glow-cyan animate-float">
+              {/* Floating Phone Icon */}
+              <button
+                onClick={() => {
+                  document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="absolute -top-6 -right-6 glass rounded-2xl p-4 glow-cyan animate-float hover:scale-110 transition-transform cursor-pointer z-20"
+              >
                 <Phone className="w-8 h-8 text-primary" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 glass rounded-2xl p-4 glow-purple animate-float [animation-delay:1s]">
-                <MessageSquare className="w-8 h-8 text-secondary" />
-              </div>
+              </button>
+              {/* Floating Chat Icon */}
+              <button
+                onClick={handleChatClick}
+                className="absolute -bottom-6 -left-6 glass rounded-2xl p-4 glow-purple animate-float [animation-delay:1s] hover:scale-110 transition-transform cursor-pointer z-20"
+              >
+                <Bot className="w-8 h-8 text-secondary" />
+              </button>
             </div>
           </div>
         </div>
@@ -248,7 +268,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-3 text-foreground">Perfect Order Accuracy</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed">
                 Eliminate costly errors, returns, and chargebacks. Connor confirms
-                every detail and sends instant order confirmations.
+                every detail before processing orders.
               </p>
               <div className="glass rounded-lg p-4 mt-4">
                 <div className="text-3xl font-bold gradient-text">-89%</div>
@@ -261,13 +281,13 @@ export default function Home() {
               <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 glow-blue">
                 <Clock className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Instant Response Time</h3>
+              <h3 className="text-2xl font-bold mb-3 text-foreground">Instant Response</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed">
-                Customers don't wait on hold or for callbacks. Immediate service means
-                higher conversion rates and customer satisfaction.
+                Customers get answers in under 2 seconds. No hold music, no waiting,
+                no frustration driving them to competitors.
               </p>
               <div className="glass rounded-lg p-4 mt-4">
-                <div className="text-3xl font-bold gradient-text">&lt;2 sec</div>
+                <div className="text-3xl font-bold gradient-text">&lt;2s</div>
                 <div className="text-sm text-muted-foreground mt-1">Average response time</div>
               </div>
             </Card>
@@ -277,14 +297,14 @@ export default function Home() {
               <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 glow-cyan">
                 <Zap className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Faster Order Processing</h3>
+              <h3 className="text-2xl font-bold mb-3 text-foreground">Faster Processing</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed">
-                Connor processes orders 3x faster than human agents, reducing cart
-                abandonment and increasing throughput during peak hours.
+                Connor processes orders 3x faster than human reps, reducing cart
+                abandonment and increasing throughput.
               </p>
               <div className="glass rounded-lg p-4 mt-4">
                 <div className="text-3xl font-bold gradient-text">3x</div>
-                <div className="text-sm text-muted-foreground mt-1">Faster order completion</div>
+                <div className="text-sm text-muted-foreground mt-1">Processing speed increase</div>
               </div>
             </Card>
 
@@ -295,117 +315,65 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground">Customer Retention</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed">
-                Consistent, professional service builds loyalty. Connor remembers
-                customer preferences and order history for personalized experiences.
+                Consistent, professional service builds loyalty. Customers stay longer
+                and order more frequently.
               </p>
               <div className="glass rounded-lg p-4 mt-4">
                 <div className="text-3xl font-bold gradient-text">+42%</div>
-                <div className="text-sm text-muted-foreground mt-1">Repeat customer rate</div>
+                <div className="text-sm text-muted-foreground mt-1">Retention improvement</div>
               </div>
             </Card>
           </div>
 
           {/* ROI Highlight */}
-          <Card className="glass-strong p-8 lg:p-12 mt-16 text-center">
-            <h3 className="text-3xl font-bold mb-4 text-foreground">
-              Average ROI: <span className="gradient-text">487%</span> in First Year
-            </h3>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Our customers see an average revenue increase of $147,000 annually while
-              reducing customer service costs by 63%. CounterPro pays for itself in weeks,
-              not months.
-            </p>
-          </Card>
+          <div className="mt-16 text-center">
+            <Card className="glass-strong p-12 max-w-4xl mx-auto glow-blue">
+              <h3 className="text-3xl font-bold mb-4 gradient-text">
+                Average First-Year ROI
+              </h3>
+              <div className="text-6xl font-bold mb-4 text-foreground">487%</div>
+              <p className="text-xl text-foreground/80">
+                Typical wholesale distributors see <span className="font-bold text-primary">$147,000</span> in
+                additional annual revenue from implementing CounterPro
+              </p>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Demo Section */}
-      <section id="demo" className="py-20 lg:py-32 relative">
-        {/* Background accent */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: "url(/images/warehouse-tech.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        />
-
-        <div className="container relative z-10">
+      <section id="demo" className="py-20 lg:py-32">
+        <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Experience Connor in Action
+              See Connor in Action
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Try interactive demos to see how Connor handles real wholesale
-              distribution scenarios with intelligence and professionalism.
+              Experience how Connor handles real customer interactions. Try the
+              interactive demos below to see it respond to calls and messages.
             </p>
           </div>
 
-          <Tabs defaultValue="phone" className="max-w-4xl mx-auto">
-            <TabsList className="glass-strong w-full grid grid-cols-2 p-2 mb-8">
-              <TabsTrigger
-                value="phone"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-lg py-4"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Phone Demo
-              </TabsTrigger>
-              <TabsTrigger
-                value="sms"
-                className="data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground text-lg py-4"
-              >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                SMS Demo
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="phone" className="mt-0">
-              <PhoneDemo />
-            </TabsContent>
-
-            <TabsContent value="sms" className="mt-0">
-              <SMSDemo />
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 lg:py-32">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                Transform Your Customer Service
-              </h2>
-              <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-                Connor doesn't just answer calls - he understands your business,
-                solves problems, and delivers experiences that keep customers
-                coming back.
-              </p>
-
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-foreground/80 text-lg">{benefit}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <Card className="glass-strong p-8">
-                <img
-                  src="/images/phone-interface-glow.png"
-                  alt="Phone Interface"
-                  className="w-full h-auto"
-                />
-              </Card>
-            </div>
-          </div>
+          <Card className="glass-strong p-8 max-w-5xl mx-auto">
+            <Tabs defaultValue="phone" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8 glass">
+                <TabsTrigger value="phone" className="flex items-center gap-2 data-[state=active]:glass-strong">
+                  <Phone className="w-5 h-5" />
+                  <span>Phone Demo</span>
+                </TabsTrigger>
+                <TabsTrigger value="sms" className="flex items-center gap-2 data-[state=active]:glass-strong">
+                  <MessageSquare className="w-5 h-5" />
+                  <span>SMS Demo</span>
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent value="phone" className="mt-0">
+                <PhoneDemo />
+              </TabsContent>
+              <TabsContent value="sms" className="mt-0">
+                <SMSDemo />
+              </TabsContent>
+            </Tabs>
+          </Card>
         </div>
       </section>
 
@@ -414,28 +382,20 @@ export default function Home() {
         <div className="container">
           <Card className="glass-strong p-12 lg:p-16 text-center glow-blue">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Ready to Deploy Connor?
+              Ready to Transform Your Customer Service?
             </h2>
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
-              Get started with CounterPro.ai today and transform your
-              wholesale distribution customer service.
+              Join the waitlist and be among the first to experience AI-powered
+              customer service that actually works.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/80 text-primary-foreground glow-blue text-lg px-8 py-6"
-              >
-                Get Started Free
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="glass-strong text-lg px-8 py-6"
-              >
-                Schedule Demo Call
-              </Button>
-            </div>
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/80 text-primary-foreground glow-blue text-lg px-12 py-6"
+              onClick={handleLearnMore}
+            >
+              Join the Waitlist
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </Card>
         </div>
       </section>
@@ -443,12 +403,16 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 border-t border-border/50">
         <div className="container">
-          <div className="text-center text-muted-foreground">
-            <p className="text-sm">
-              CounterPro.ai - Enterprise AI Customer Service • Demo for illustration purposes
-            </p>
-            <p className="text-xs mt-2 opacity-70">
-              © 2026 CounterPro.ai. All conversations are simulated for demonstration.
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <img
+                src="/images/counterpro-logo.png"
+                alt="CounterPro.ai"
+                className="h-8 w-auto"
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">
+              © 2026 CounterPro.ai. Transforming wholesale distribution with AI.
             </p>
           </div>
         </div>
