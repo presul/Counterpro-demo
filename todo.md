@@ -27,4 +27,13 @@
 
 ## Phase 2: Testing
 - [x] Test button opens waitlist form (verified: modal opens with all fields)
+- [x] Create checkpoint (version 260947af)
+
+# TODO: Update Eyebrow Text
+
+## Phase 1: Update Text
+- [x] Change "For Wholesale & Industrial Distributors" to "For Wholesalers & Distributors"
+
+## Phase 2: Testing
+- [x] Verify text change in browser (confirmed: "For Wholesalers & Distributors")
 - [ ] Create checkpoint

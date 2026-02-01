@@ -128,7 +128,7 @@ export default function Home() {
 
               {/* Eyebrow text */}
               <p className="text-sm lg:text-base font-semibold text-primary uppercase tracking-wider">
-                For Wholesale & Industrial Distributors
+                For Wholesalers & Distributors
               </p>
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
