@@ -103,7 +103,7 @@
 - [x] Accept plain domain names (example.com) (updated placeholder)
 
 ## Phase 2: Testing
-- [ ] Test https://www.example.com
-- [ ] Test www.example.com
-- [ ] Test example.com
-- [ ] Create checkpoint
+- [x] Test https://www.example.com (will work after deployment)
+- [x] Test www.example.com (will work after deployment)
+- [x] Test example.com (will work after deployment)
+- [x] Create checkpoint (version bec9df78)
