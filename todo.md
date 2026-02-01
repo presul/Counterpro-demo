@@ -107,3 +107,16 @@
 - [x] Test www.example.com (will work after deployment)
 - [x] Test example.com (will work after deployment)
 - [x] Create checkpoint (version bec9df78)
+
+# TODO: Fix Browser Tab Title and Meta Tags (URGENT)
+
+## Phase 1: Update HTML Metadata
+- [x] Update HTML title tag from "Frank AI - Wholesale Distribution Demo" to "CounterPro.ai - AI Customer Service for Wholesalers & Distributors"
+- [x] Update Open Graph meta tags (og:title, og:description, og:image, og:url)
+- [x] Update Twitter Card meta tags (twitter:title, twitter:description, twitter:image)
+- [x] Add favicon link to CounterPro logo
+
+## Phase 2: Testing and Deployment
+- [ ] Test social media preview
+- [ ] Create checkpoint
+- [ ] Push to GitHub
