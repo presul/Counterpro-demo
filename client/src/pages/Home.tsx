@@ -126,16 +126,38 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Eyebrow text */}
+              <p className="text-sm lg:text-base font-semibold text-primary uppercase tracking-wider">
+                For Wholesale & Industrial Distributors
+              </p>
+
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                Your AI powered{" "}
-                <span className="gradient-text">Client Success Agent</span>
+                Add 10–20% More Counter Sales{" "}
+                <span className="gradient-text">Without Hiring More Staff</span>
               </h1>
 
               <p className="text-xl lg:text-2xl text-foreground/90 leading-relaxed">
-                Your AI-powered customer service agent for wholesale distribution.
-                Handles calls, takes orders, checks inventory, and solves problems
-                with human-like intelligence.
+                CounterPro.ai answers calls, takes orders, checks stock and pricing, and upsells add-ons like your best counter rep… 24/7, at a fraction of the cost.
               </p>
+
+              {/* 3 Bullet Points */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground">CounterPro.ai for Distributors:</h3>
+                <ul className="space-y-3 text-lg text-foreground/90">
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Never miss a call or counter order, even when your team is slammed</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Increase average order value with automatic add-on / upsells / promos and substitute suggestions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Cover busy periods, after-hours and weekends without adding headcount or overtime</span>
+                  </li>
+                </ul>
+              </div>
 
               <div className="flex flex-wrap gap-4">
                 <Button
@@ -146,7 +168,7 @@ export default function Home() {
                     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  Try Live Demo
+                  See Revenue Impact Live
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 <Button
@@ -155,7 +177,7 @@ export default function Home() {
                   className="glass-strong text-lg px-8 py-6"
                   onClick={handleLearnMore}
                 >
-                  Learn More
+                  Watch 3-Minute Demo
                 </Button>
               </div>
 
@@ -202,11 +224,14 @@ export default function Home() {
       <section id="capabilities" className="py-20 lg:py-32">
         <div className="container">
           <div className="text-center mb-16">
+            <p className="text-lg text-primary font-semibold mb-4">
+              Meet Connor, your AI counter rep that never calls in sick.
+            </p>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
               Intelligent Capabilities
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Connor combines advanced AI with deep wholesale distribution knowledge
+              CounterPro.ai combines advanced AI with deep wholesale distribution knowledge
               to deliver exceptional customer experiences across every channel.
             </p>
           </div>
@@ -254,7 +279,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Zero Missed Revenue</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed text-center">
                 Never lose a sale to a competitor because you couldn't answer the phone.
-                Connor handles unlimited calls simultaneously, 24/7/365.
+                CounterPro.ai handles unlimited calls simultaneously, 24/7/365.
               </p>
               <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
                 <div className="text-3xl font-bold gradient-text">+34%*</div>
@@ -269,7 +294,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Intelligent Upselling</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed text-center">
-                Connor analyzes order patterns and suggests complementary products,
+                CounterPro.ai analyzes order patterns and suggests complementary products,
                 volume discounts, and premium alternatives at the perfect moment.
               </p>
               <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
@@ -285,7 +310,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Perfect Order Accuracy</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed text-center">
-                Eliminate costly errors, returns, and chargebacks. Connor confirms
+                Eliminate costly errors, returns, and chargebacks. CounterPro.ai confirms
                 every detail before processing orders.
               </p>
               <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
@@ -317,7 +342,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Faster Processing</h3>
               <p className="text-foreground/70 mb-4 leading-relaxed text-center">
-                Connor processes orders 3x faster than human reps, reducing cart
+                CounterPro.ai processes orders 3x faster than human reps, reducing cart
                 abandonment and increasing throughput.
               </p>
               <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
@@ -366,10 +391,10 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              See Connor in Action
+              See CounterPro.ai in Action
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Experience how Connor handles real customer interactions. Try the
+              Experience how CounterPro.ai handles real customer interactions. Try the
               interactive demos below to see it respond to calls and messages.
             </p>
           </div>
