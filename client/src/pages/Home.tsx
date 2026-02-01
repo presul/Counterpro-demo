@@ -159,25 +159,14 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex justify-center">
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/80 text-primary-foreground glow-blue text-lg px-8 py-6"
-                  onClick={() => {
-                    trackButtonClick('Try Live Demo');
-                    document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  See Revenue Impact Live
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="glass-strong text-lg px-8 py-6"
                   onClick={handleLearnMore}
                 >
                   Watch 3-Minute Demo
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
 

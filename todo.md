@@ -1,12 +1,19 @@
-# TODO: Redesign Electron Animation
+# TODO: Fix Stats and Remove Live Demo Button
 
-## Phase 1: Update Animation
-- [x] Change electron particles from soft bubbles to sharp electric particles (2px, brighter)
-- [x] Add electric trail/glow effects (::after pseudo-element with gradient trail)
-- [x] Make particles move faster and more erratically (like electricity) (linear animation, no easing)
-- [x] Add brightness/intensity variations (filter: brightness with keyframes)
-- [x] Make particles flow through the holographic assistant and environment (diagonal paths)
+## Phase 1: Remove Button
+- [x] Remove "See Revenue Impact Live" button from hero section
+- [x] Keep only "Watch 3-Minute Demo" button
 
-## Phase 2: Testing
-- [x] Test animation in browser
+## Phase 2: Add Asterisks and Disclaimer
+- [x] Add asterisk to +34% stat (already present)
+- [x] Add asterisk to +$127 stat (already present)
+- [x] Add asterisk to -89% stat (already present)
+- [x] Add "*Your results will vary" disclaimer at bottom of Why CounterPro section (already present)
+
+## Phase 3: Fix Alignment
+- [x] Align small stat bubbles inside big cards properly (already correctly aligned with mx-auto, text-center, mt-auto)
+- [x] Ensure consistent spacing and centering (all cards use flex flex-col with proper centering)
+
+## Phase 4: Testing
+- [x] Test all changes in browser (verified: button removed, asterisks present, disclaimer visible, alignment correct)
 - [ ] Create checkpoint
