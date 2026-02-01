@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { MessageSquare, Send } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { trackDemoInteraction } from "@/lib/tracking";
 
 interface Message {
   sender: "connor" | "customer";
@@ -173,7 +174,10 @@ export default function SMSDemo() {
             <Card
               key={index}
               className="glass p-6 hover:glass-strong transition-all duration-300 cursor-pointer group"
-              onClick={() => startScenario(index)}
+              onClick={() => {
+                trackDemoInteraction('sms', DEMO_SCENARIOS[index].title);
+                startScenario(index);
+              }}
             >
               <div className="flex items-center justify-between">
                 <div className="flex-1">

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Phone, PhoneOff, Volume2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { trackDemoInteraction } from "@/lib/tracking";
 
 interface Message {
   speaker: "connor" | "customer";
@@ -104,7 +105,10 @@ export default function PhoneDemo() {
             <Card
               key={index}
               className="glass p-6 hover:glass-strong transition-all duration-300 cursor-pointer group"
-              onClick={() => startCall(index)}
+              onClick={() => {
+                trackDemoInteraction('phone', DEMO_CONVERSATIONS[index].title);
+                startCall(index);
+              }}
             >
               <div className="flex items-center justify-between">
                 <div>

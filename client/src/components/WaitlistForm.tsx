@@ -20,6 +20,7 @@ import {
 import { ArrowRight, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { trackFormSubmission } from "@/lib/tracking";
 
 interface WaitlistFormProps {
   open: boolean;
@@ -39,6 +40,16 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
 
   const submitMutation = trpc.waitlist.submit.useMutation({
     onSuccess: () => {
+      // Track successful form submission
+      trackFormSubmission({
+        name: formData.name,
+        company: formData.companyName,
+        email: formData.email,
+        phone: formData.phone,
+        revenue: formData.annualRevenue,
+        smsConsent: formData.smsConsent,
+      });
+      
       toast.success("Thank you for joining the waitlist!", {
         description: "We'll be in touch soon with next steps.",
       });

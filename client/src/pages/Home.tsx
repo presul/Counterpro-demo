@@ -6,6 +6,7 @@
 
 import { useState } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { trackButtonClick, trackDemoInteraction } from "@/lib/tracking";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -65,14 +66,17 @@ export default function Home() {
   ];
 
   const handleChatClick = () => {
+    trackButtonClick('AI Chat Icon');
     alert("AI Chat: CounterPro.ai handles phone calls, SMS messages, takes orders, checks inventory in real-time, and intelligently transfers complex issues to your team. Available 24/7 to capture every revenue opportunity!");
   };
 
   const handleLearnMore = () => {
+    trackButtonClick('Learn More');
     window.open("https://calendly.com/joemeyer/counterpro-ai-intro-demo", "_blank");
   };
 
   const handleJoinWaitlist = () => {
+    trackButtonClick('Join the Waitlist');
     setWaitlistOpen(true);
   };
 
@@ -138,6 +142,7 @@ export default function Home() {
                   size="lg"
                   className="bg-primary hover:bg-primary/80 text-primary-foreground glow-blue text-lg px-8 py-6"
                   onClick={() => {
+                    trackButtonClick('Try Live Demo');
                     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >

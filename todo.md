@@ -1,17 +1,21 @@
-# TODO: Fix Revenue Card Alignment and Add Disclaimers
+# TODO: Implement Tracking Infrastructure
 
-## Phase 1: Alignment Fixes
-- [x] Center icons in all revenue cards
-- [x] Center stat bubbles (+34%, +$127, -89%, etc.) within cards
-- [x] Ensure all cards have consistent alignment
-- [x] Fix text centering in stat bubbles
+## Phase 1: Add Tracking Scripts
+- [x] Add GA4 tracking script to HTML head
+- [x] Add Facebook Pixel script to HTML head
+- [x] Add LinkedIn Insight Tag to HTML head
+- [x] Add Microsoft Clarity script to HTML head
+- [x] Use environment variables for tracking IDs
 
-## Phase 2: Add Asterisks and Disclaimer
-- [x] Add asterisk to +34% (Average revenue increase)
-- [x] Add asterisk to +$127 (Average order value lift)
-- [x] Add asterisk to -89% (Order error reduction)
-- [x] Add disclaimer "*Your results may vary" at bottom of section
+## Phase 2: Event Tracking Implementation
+- [x] Track form submissions with revenue data (GA4 + Facebook)
+- [x] Track "Try Live Demo" button clicks
+- [x] Track "Learn More" button clicks
+- [x] Track "Join Waitlist" button clicks
+- [x] Track Phone demo scenario selections
+- [x] Track SMS demo scenario selections
 
-## Phase 3: Testing
-- [x] Test visual alignment in browser
-- [x] Create checkpoint
+## Phase 3: Testing & Documentation
+- [x] Test tracking scripts load correctly (warnings expected until IDs are added)
+- [x] Document how to add tracking IDs in Settings → Secrets
+- [ ] Create checkpoint
