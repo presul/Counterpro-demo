@@ -5,6 +5,7 @@
  */
 
 import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -25,6 +26,10 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [waitlistOpen, setWaitlistOpen] = useState(false);
   const capabilities = [
     {
@@ -101,10 +106,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container relative z-10 py-20 lg:py-32">
+        <div className="container relative z-10 py-8 lg:py-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className="space-y-8 pt-2">
+            <div className="space-y-8">
               {/* Logo - Raised with enhanced liquid glass effect */}
               <div className="mb-16 inline-flex items-center gap-4 glass-strong rounded-2xl px-6 py-3 backdrop-blur-2xl bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95 border-2 border-cyan-400/80 shadow-[0_0_50px_rgba(6,182,212,0.6),inset_0_0_30px_rgba(6,182,212,0.2)]">
                 <img
