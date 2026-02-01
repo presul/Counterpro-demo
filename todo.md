@@ -16,4 +16,15 @@
 
 ## Phase 4: Testing
 - [x] Test all changes in browser (verified: button removed, asterisks present, disclaimer visible, alignment correct)
+- [x] Create checkpoint (version 1c75fab7)
+
+# TODO: Change Hero Button to Join Waitlist
+
+## Phase 1: Update Button
+- [x] Change "Watch 3-Minute Demo" button text to "Join the Waitlist"
+- [x] Update button onClick to open waitlist form modal (setWaitlistOpen(true))
+- [x] Ensure button styling matches the waitlist CTA at bottom (same className and glow-blue effect)
+
+## Phase 2: Testing
+- [x] Test button opens waitlist form (verified: modal opens with all fields)
 - [ ] Create checkpoint

@@ -163,9 +163,9 @@ export default function Home() {
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/80 text-primary-foreground glow-blue text-lg px-8 py-6"
-                  onClick={handleLearnMore}
+                  onClick={handleJoinWaitlist}
                 >
-                  Watch 3-Minute Demo
+                  Join the Waitlist
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
