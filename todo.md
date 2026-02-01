@@ -1,22 +1,17 @@
-# TODO: Revenue Scale Field and Integration Prep
+# TODO: Fix Revenue Card Alignment and Add Disclaimers
 
-## Phase 1: Form Updates
-- [x] Add revenue scale dropdown to WaitlistForm component
-- [x] Add revenue options: Under $5M, $5-$20M, $20-$200M, Over $200M
-- [x] Update form validation
+## Phase 1: Alignment Fixes
+- [x] Center icons in all revenue cards
+- [x] Center stat bubbles (+34%, +$127, -89%, etc.) within cards
+- [x] Ensure all cards have consistent alignment
+- [x] Fix text centering in stat bubbles
 
-## Phase 2: Backend Updates
-- [x] Add revenue field to database schema
-- [x] Update waitlist router to accept revenue field
-- [x] Update email template to include revenue
-- [x] Run database migration
+## Phase 2: Add Asterisks and Disclaimer
+- [x] Add asterisk to +34% (Average revenue increase)
+- [x] Add asterisk to +$127 (Average order value lift)
+- [x] Add asterisk to -89% (Order error reduction)
+- [x] Add disclaimer "*Your results may vary" at bottom of section
 
 ## Phase 3: Testing
-- [x] Test form submission with revenue field
-- [x] Verify database storage
+- [x] Test visual alignment in browser
 - [x] Create checkpoint
-
-## Future Integrations (Notes)
-- GoHighLevel integration for rapid AI response
-- ElevenLabs demo link for live demo button
-- Goal: AI-driven sales process without human intervention

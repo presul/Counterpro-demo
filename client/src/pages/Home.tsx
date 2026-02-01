@@ -242,96 +242,96 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Revenue Card 1 */}
-            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 glow-blue">
+            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 glow-blue mx-auto">
                 <TrendingUp className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Zero Missed Revenue</h3>
-              <p className="text-foreground/70 mb-4 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Zero Missed Revenue</h3>
+              <p className="text-foreground/70 mb-4 leading-relaxed text-center">
                 Never lose a sale to a competitor because you couldn't answer the phone.
                 Connor handles unlimited calls simultaneously, 24/7/365.
               </p>
-              <div className="glass rounded-lg p-4 mt-4">
-                <div className="text-3xl font-bold gradient-text">+34%</div>
+              <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
+                <div className="text-3xl font-bold gradient-text">+34%*</div>
                 <div className="text-sm text-muted-foreground mt-1">Average revenue increase</div>
               </div>
             </Card>
 
             {/* Revenue Card 2 */}
-            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 glow-cyan">
+            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 glow-cyan mx-auto">
                 <Sparkles className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Intelligent Upselling</h3>
-              <p className="text-foreground/70 mb-4 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Intelligent Upselling</h3>
+              <p className="text-foreground/70 mb-4 leading-relaxed text-center">
                 Connor analyzes order patterns and suggests complementary products,
                 volume discounts, and premium alternatives at the perfect moment.
               </p>
-              <div className="glass rounded-lg p-4 mt-4">
-                <div className="text-3xl font-bold gradient-text">+$127</div>
+              <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
+                <div className="text-3xl font-bold gradient-text">+$127*</div>
                 <div className="text-sm text-muted-foreground mt-1">Average order value lift</div>
               </div>
             </Card>
 
             {/* Revenue Card 3 */}
-            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 glow-purple">
+            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 glow-purple mx-auto">
                 <CheckCircle2 className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Perfect Order Accuracy</h3>
-              <p className="text-foreground/70 mb-4 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Perfect Order Accuracy</h3>
+              <p className="text-foreground/70 mb-4 leading-relaxed text-center">
                 Eliminate costly errors, returns, and chargebacks. Connor confirms
                 every detail before processing orders.
               </p>
-              <div className="glass rounded-lg p-4 mt-4">
-                <div className="text-3xl font-bold gradient-text">-89%</div>
+              <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
+                <div className="text-3xl font-bold gradient-text">-89%*</div>
                 <div className="text-sm text-muted-foreground mt-1">Order error reduction</div>
               </div>
             </Card>
 
             {/* Revenue Card 4 */}
-            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 glow-blue">
+            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 glow-blue mx-auto">
                 <Clock className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Instant Response</h3>
-              <p className="text-foreground/70 mb-4 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Instant Response</h3>
+              <p className="text-foreground/70 mb-4 leading-relaxed text-center">
                 Customers get answers in under 2 seconds. No hold music, no waiting,
                 no frustration driving them to competitors.
               </p>
-              <div className="glass rounded-lg p-4 mt-4">
+              <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
                 <div className="text-3xl font-bold gradient-text">&lt;2s</div>
                 <div className="text-sm text-muted-foreground mt-1">Average response time</div>
               </div>
             </Card>
 
             {/* Revenue Card 5 */}
-            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 glow-cyan">
+            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 glow-cyan mx-auto">
                 <Zap className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Faster Processing</h3>
-              <p className="text-foreground/70 mb-4 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Faster Processing</h3>
+              <p className="text-foreground/70 mb-4 leading-relaxed text-center">
                 Connor processes orders 3x faster than human reps, reducing cart
                 abandonment and increasing throughput.
               </p>
-              <div className="glass rounded-lg p-4 mt-4">
+              <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
                 <div className="text-3xl font-bold gradient-text">3x</div>
                 <div className="text-sm text-muted-foreground mt-1">Processing speed increase</div>
               </div>
             </Card>
 
             {/* Revenue Card 6 */}
-            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 glow-purple">
+            <Card className="glass-strong p-8 hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 glow-purple mx-auto">
                 <TrendingUp className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-foreground">Customer Retention</h3>
-              <p className="text-foreground/70 mb-4 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-3 text-foreground text-center">Customer Retention</h3>
+              <p className="text-foreground/70 mb-4 leading-relaxed text-center">
                 Consistent, professional service builds loyalty. Customers stay longer
                 and order more frequently.
               </p>
-              <div className="glass rounded-lg p-4 mt-4">
+              <div className="glass rounded-lg p-4 mt-auto mx-auto w-full text-center">
                 <div className="text-3xl font-bold gradient-text">+42%</div>
                 <div className="text-sm text-muted-foreground mt-1">Retention improvement</div>
               </div>
@@ -345,8 +345,11 @@ export default function Home() {
                 Average First-Year ROI
               </h3>
               <div className="text-6xl font-bold mb-4 text-foreground">487%</div>
-              <p className="text-xl text-foreground/80">
+              <p className="text-xl text-foreground/80 mb-6">
                 Typical wholesale distributors see significant revenue growth from implementing CounterPro
+              </p>
+              <p className="text-sm text-muted-foreground italic">
+                *Your results may vary
               </p>
             </Card>
           </div>
