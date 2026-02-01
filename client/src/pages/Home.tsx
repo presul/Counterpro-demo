@@ -64,6 +64,10 @@ export default function Home() {
     window.open("https://calendly.com/joemeyer/counterpro-ai-intro-demo", "_blank");
   };
 
+  const handleJoinWaitlist = () => {
+    window.location.href = "mailto:jm@DigitalVisor.com?subject=Join CounterPro.ai Waitlist&body=Hi, I'm interested in joining the CounterPro.ai waitlist.%0D%0A%0D%0AName:%0D%0ACompany:%0D%0APhone:%0D%0AIndustry:%0D%0A";
+  };
+
   return (
     <div className="min-h-screen animated-gradient">
       {/* Hero Section */}
@@ -98,15 +102,13 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
             <div className="space-y-8">
-              {/* Logo */}
-              <div className="mb-6 inline-flex items-center gap-4">
-                <div className="glass-strong rounded-xl p-3 glow-blue backdrop-blur-xl bg-background/30 border border-primary/30">
-                  <img
-                    src="/images/counterpro-logo-transparent.png"
-                    alt="CounterPro.ai Logo"
-                    className="h-20 w-auto"
-                  />
-                </div>
+              {/* Logo - Raised with unified liquid glass effect */}
+              <div className="mb-12 inline-flex items-center gap-4 glass-strong rounded-2xl px-6 py-4 glow-blue backdrop-blur-2xl bg-gradient-to-br from-primary/20 via-background/40 to-secondary/20 border-2 border-primary/40 shadow-2xl shadow-primary/20">
+                <img
+                  src="/images/counterpro-logo-transparent.png"
+                  alt="CounterPro.ai Logo"
+                  className="h-16 w-auto"
+                />
                 <div className="text-4xl font-bold tracking-tight" style={{ fontFamily: '"Orbitron", "Rajdhani", sans-serif' }}>
                   <span className="gradient-text">CounterPro.ai</span>
                 </div>
@@ -393,7 +395,7 @@ export default function Home() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/80 text-primary-foreground glow-blue text-lg px-12 py-6"
-              onClick={handleLearnMore}
+              onClick={handleJoinWaitlist}
             >
               Join the Waitlist
               <ArrowRight className="w-5 h-5 ml-2" />
