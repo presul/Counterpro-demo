@@ -64,11 +64,25 @@ export default function SMSDemo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    // Only scroll within the SMS container, not the whole page
+    if (containerRef.current && messagesEndRef.current) {
+      const container = containerRef.current;
+      const messagesEnd = messagesEndRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const messagesEndRect = messagesEnd.getBoundingClientRect();
+      
+      // Only scroll if the message is outside the visible area of the container
+      if (messagesEndRect.bottom > containerRect.bottom) {
+        messagesEnd.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    }
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Only auto-scroll if there are messages (not on initial tab click)
+    if (messages.length > 0) {
+      scrollToBottom();
+    }
   }, [messages, isTyping]);
 
   useEffect(() => {

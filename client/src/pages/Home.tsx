@@ -4,11 +4,13 @@
  * Features: Hero with animated electrons, phone/SMS demo interfaces, capabilities showcase
  */
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PhoneDemo from "@/components/PhoneDemo";
 import SMSDemo from "@/components/SMSDemo";
+import { WaitlistForm } from "@/components/WaitlistForm";
 import {
   Phone,
   MessageSquare,
@@ -23,6 +25,7 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
   const capabilities = [
     {
       icon: Phone,
@@ -65,7 +68,7 @@ export default function Home() {
   };
 
   const handleJoinWaitlist = () => {
-    window.location.href = "mailto:jm@DigitalVisor.com?subject=Join CounterPro.ai Waitlist&body=Hi, I'm interested in joining the CounterPro.ai waitlist.%0D%0A%0D%0AName:%0D%0ACompany:%0D%0APhone:%0D%0AIndustry:%0D%0A";
+    setWaitlistOpen(true);
   };
 
   return (
@@ -101,9 +104,9 @@ export default function Home() {
         <div className="container relative z-10 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className="space-y-8">
-              {/* Logo - Raised with unified liquid glass effect */}
-              <div className="mb-12 inline-flex items-center gap-4 glass-strong rounded-2xl px-6 py-4 glow-blue backdrop-blur-2xl bg-gradient-to-br from-primary/20 via-background/40 to-secondary/20 border-2 border-primary/40 shadow-2xl shadow-primary/20">
+            <div className="space-y-8 pt-2">
+              {/* Logo - Raised with enhanced liquid glass effect */}
+              <div className="mb-16 inline-flex items-center gap-4 glass-strong rounded-2xl px-6 py-3 backdrop-blur-2xl bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95 border-2 border-cyan-400/80 shadow-[0_0_50px_rgba(6,182,212,0.6),inset_0_0_30px_rgba(6,182,212,0.2)]">
                 <img
                   src="/images/counterpro-logo-transparent.png"
                   alt="CounterPro.ai Logo"
@@ -421,6 +424,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Waitlist Form Modal */}
+      <WaitlistForm open={waitlistOpen} onOpenChange={setWaitlistOpen} />
     </div>
   );
 }
